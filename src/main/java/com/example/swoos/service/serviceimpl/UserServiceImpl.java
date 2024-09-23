@@ -34,6 +34,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     MasterRoleRepository masterRoleRepository;
     @Autowired
+    private ColumnRepository columnRepository;
+    @Autowired
     ModelMapper modelMapper;
 
     @Override
@@ -125,8 +127,6 @@ public class UserServiceImpl implements UserService {
         return successResponse;
 
     }
-    @Autowired
-    private ColumnRepository columnRepository;
 
     private void setRole(UserSignUpRequest userSignUpRequest, User user) {
         if (userSignUpRequest.getApplicationRole().getId()>0) {
